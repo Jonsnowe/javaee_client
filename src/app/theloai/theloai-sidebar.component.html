@@ -1,0 +1,5 @@
+<ul id="sideManu" class="nav nav-tabs nav-stacked">
+    <li *ngFor="let theloai of theloais">
+        <a (click)="click(theloai.matheloai)">{{theloai.tentheloai}}</a>
+    </li>
+</ul>

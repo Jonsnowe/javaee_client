@@ -1,0 +1,28 @@
+
+<ul class="breadcrumb">
+    <li><a href="">Trang chủ</a> <span class="divider">/</span></li>
+    <li><a  [routerLink]="['/sach',theloai.matheloai]" >{{theloai.tentheloai}}</a> <span class="divider">/</span></li>
+    <li class="active">{{detailsach.tensach}}</li>
+</ul>
+<div class="row">
+    <div id="gallery" class="span3">
+        <!-- <img src={{url}}{{detailsach.masach}} style="float:left" /> -->
+    </div>
+    <div class="span6">
+        <h3>{{detailsach.tensach}} </h3>
+        <hr class="soft" />
+        <form class="form-horizontal qtyFrm">
+            <div class="control-group">
+                <label class="control-label"><span>{{detailsach.dongiaban | currency:'VND' }}</span></label>
+                <div class="controls">
+                        <a class="btn btn-large btn-primary pull-right" [routerLink]="['/giohang',detailsach.masach]">Thêm vào <i class="icon-shopping-cart"></i></a>
+                </div>
+            </div>
+        </form>
+        <hr class="soft" />
+        <h4>Còn {{detailsach.soluongton}} sản phẩm </h4>
+        <hr class="soft clr" />
+        <p>{{detailsach.mota}}</p>
+    </div>
+
+</div>

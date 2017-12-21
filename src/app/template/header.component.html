@@ -1,0 +1,27 @@
+<!--Header -->
+<div id="header">
+    <div class="container">
+        <!-- Navbar ================================================== -->
+        <div id="logoArea" class="navbar">
+            <a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-inner">
+                <a class="brand" routerLink="/">
+                    <img src="assets/themes/images/logo.png" alt="Bootsshop" />
+                </a> 
+                 <div class="form-inline navbar-search">
+                    <input class="form-control"  [(ngModel)]="searchString" placeholder="Nhập tên sản phẩm" type="text">
+                    <select [(ngModel)]="searchTheloai" >
+                        <option value="0">Tất cả</option>
+                        <option *ngFor="let theloai of theloais" value="{{theloai.matheloai}}">{{theloai.tentheloai}}</option>
+                    </select>
+                    <button class="btn btn-primary" id="submit_searchbar" (click)="Search_()">Tìm kiếm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Header end-->

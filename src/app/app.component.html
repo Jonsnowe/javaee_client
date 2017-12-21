@@ -1,0 +1,19 @@
+<app-header (Search)="Search_($event)"></app-header>
+<div id="mainBody">
+    <div class="container">
+        <div class="row">
+            <div id="sidebar" class="span3">
+                <a id="myCart" href="#">
+                    <img alt="cart" src="assets/themes/images/ico-cart.png">Giỏ hàng({{soluong}})
+                    <span class="badge badge-warning pull-right">{{thanhtien}}</span>
+                </a>
+               <app-theloai-sidebar></app-theloai-sidebar>
+            </div>
+            <div class="span9">
+              <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

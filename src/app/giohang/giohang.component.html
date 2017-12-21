@@ -1,0 +1,36 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sản Phẩm</th>
+            <th>Mô tả</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr class="cart-table" *ngFor="let item of items">
+                <td> <img width="60" alt="" src={{url}}{{item.sanpham.masach}}></td>
+                <!-- <td></td> -->
+                <td>{{item.sanpham.tensach}}</td>
+                <td>
+                    <div class="input-append">
+                        <input class="span1" data-id="item.sMaSP" name="soluong" style="max-width:34px" type="number" size="16" min="1" value="{{item.soluong}}" (change)="onChangeGiohang(item,$event)"  >
+                        <a class="btn" (click)="giamGiohang(item)"><i class="icon-minus"></i></a>
+                        <a class="btn"  (click)="themGiohang(item)"><i class="icon-plus"></i></a>
+                        <a class="btn btn-danger" (click)="xoaGiohang(item)"><i class="icon-remove icon-white"></i></a>
+                    </div>
+                </td>
+                <td dongia="item.dGiaBan"  class="cart_price">{{item.sanpham.dongiaban| currency:'VND'}}</td>
+                <td class="cart_total">
+                <p class="cart_total_price">{{(item.sanpham.dongiaban * item.soluong)| currency:'VND'}}</p>
+                </td>
+            </tr>
+
+        <tr>
+            <td style="text-align:right" colspan="4"><strong>TỔNG TIỀN</strong></td>
+            <td class="label label-important tongtien" style="display:block"> <strong> {{tongtien| currency:'VND'}} </strong></td>
+        </tr>
+    </tbody>
+</table>
+<a class="btn btn-large pull-right" href="">Tiến hành đặt hàng <i class="icon-arrow-right"></i></a>
